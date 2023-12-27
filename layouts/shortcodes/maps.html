@@ -1,0 +1,24 @@
+{{ $lat := .Get 0 | default 38.9019689 }}
+{{ $long := .Get 1 | default -77.0586543 }}
+
+<div>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <div id="map" style="width: 70%; height: 580px"></div>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+        // Creating map options
+        var mapOptions = {
+            center: [{{ $lat }}, {{ $long }}],
+            zoom: 100
+        }
+
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+        // Adding layer to the map
+        map.addLayer(layer);
+    </script>
+</div>
