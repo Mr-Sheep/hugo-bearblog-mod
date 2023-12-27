@@ -4,7 +4,9 @@ added:
 
 - Table of Content
 - notice box
-
+- some useful shortcodes:
+    - embeded maps
+    - embeded telegram posts
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
